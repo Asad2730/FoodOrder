@@ -10,16 +10,13 @@ export default function  CustomHeader ({ title }) {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#000000',
-    height: 80,
+    height: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-   
+    
   },
   title: {
-    fontSize: 40,
+    fontSize: 15,
     fontWeight: 'bold',
     color:'#ffffff'
   },

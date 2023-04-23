@@ -11,8 +11,7 @@ const CustomText = ({ text, onPress }) => {
 
 const styles = StyleSheet.create({
   text: {
-    color: 'blue',
-    textDecorationLine: 'underline',
+    color: 'white',
     fontSize: 16,
   },
 });

@@ -1,4 +1,5 @@
 import  { useState } from 'react';
+import { StyleSheet, View, ScrollView, SafeAreaView,FlatList } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -24,6 +25,7 @@ export default function App() {
   };
 
   return (
+  
     <NavigationContainer>
      <Stack.Navigator>
        {!isLoggedIn ? (
@@ -42,16 +44,23 @@ export default function App() {
        )}
      </Stack.Navigator>
    </NavigationContainer>
+  
   );
 }
 
 const BottomNavigation = () => {
   return (
-    <Tab.Navigator 
-    screenOptions={() => ({
-      tabBarActiveTintColor: 'red',
-      tabBarInactiveTintColor: 'gray',
-    })}>
+<Tab.Navigator 
+  screenOptions={(color, size ) => ({
+     headerShown:false,
+    tabBarActiveTintColor: 'red',
+    tabBarInactiveTintColor: 'grey',
+    tabBarStyle: {
+      backgroundColor: '#FBE6E6',
+    },
+   
+  })}
+>
       <Tab.Screen name='Home' component={Home} 
       options={{
         tabBarIcon: ({ color, size }) => (
@@ -83,3 +92,5 @@ const BottomNavigation = () => {
     </Tab.Navigator>
   );
 }
+
+
