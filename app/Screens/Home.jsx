@@ -28,9 +28,11 @@ export default function Home({ navigation }) {
   return (
    <SafeAreaView style={styles.safeArea}>
      <View style={styles.container}>
+      
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+    
         <View style={styles.main}>
-            <HomePageSlider/>
+        <HomePageSlider/>
           <View style={styles.row}>
          <View style={styles.rowContainer}>
               <CustomText text={'Categories'} />
@@ -50,10 +52,11 @@ export default function Home({ navigation }) {
               renderItem={renderItemSelling}
               keyExtractor={(item) => item.key}
               numColumns={2}
+              scrollEnabled={false}
             />
           </View>
         </View>
-      </ScrollView>
+       </ScrollView> 
     </View>
    </SafeAreaView>
   );
@@ -63,11 +66,13 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#000000',
+    
   },
   container: {
-    flex: 1,   
+    flex:1,
+    flexGrow: 1,
   },
-  main: {
+  main: { 
     margin: 10,
   },
   list: {
