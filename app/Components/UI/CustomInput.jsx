@@ -1,5 +1,7 @@
 import React from 'react';
 import {TextInput,View,StyleSheet } from "react-native";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { Colors } from '../../utils/colors';
 
 export default function CustomInput({PlaceHolder,Type,OnChange,Value,Secure}) {
   return (
@@ -19,13 +21,13 @@ const styles = StyleSheet.create({
         borderWidth:1,
         alignItems:'center',
         justifyContent:'center',
-        width:330,
-        height:50,     
+        width:wp('80%'),
+        height:hp('6%'), 
         marginBottom:10,
         marginTop:10,
         // borderRadius:50,
-        color:'#E1D9D1',
-        borderColor: '#808080',
+        color:Colors.white,
+        borderColor: Colors.gray,
         paddingLeft: 20,
     },
 

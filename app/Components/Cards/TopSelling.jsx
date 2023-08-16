@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text, Pressable, Image } from 'react-native';
 import CustomHeader from '../UI/CustomHeader';
 import { Feather } from '@expo/vector-icons'; 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { Colors } from '../../utils/colors';
 
 export default function TopSelling({ text, url,details,price }) {
   return (
@@ -16,7 +18,7 @@ export default function TopSelling({ text, url,details,price }) {
             /> 
             <CustomHeader title={text}/>
              <View style={styles.main}>
-             <Text>{details}</Text>
+              <Text style={styles.text}>{details}</Text>
              </View>
 
              <View style={styles.row}>
@@ -37,27 +39,32 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent:'flex-start',
     alignItems:'center',
-    width: 160,
-    height: 240,
-    backgroundColor: '#FBE6E6',
+    width:wp('40%'),
+    height: hp('30%'),
+    backgroundColor: Colors.secondary_color,
     borderRadius: 20,
     marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
   },
-
+  text:{
+    color:Colors.white,
+    textAlign:'center'
+  },
 
   image: {
     borderRadius: 10,
     marginTop:10,
     marginBottom:5,
-    width: 100,
-    height: 70,
+    width: wp('30%'),
+    height: hp('10%'),
     marginLeft: 2,
     marginRight: 2,
   },
   main:{
     flex:1,
+    justifyContent:'center',
+    
   },
   row: {
     marginLeft: 4,

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, Pressable, StyleSheet } from 'react-native';
+import { Colors } from '../../utils/colors';
+import { heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const CustomText = ({ text, onPress }) => {
   return (
@@ -11,8 +13,8 @@ const CustomText = ({ text, onPress }) => {
 
 const styles = StyleSheet.create({
   text: {
-    color: 'white',
-    fontSize: 16,
+    color: Colors.white,
+    fontSize: hp('2%'),
   },
 });
 

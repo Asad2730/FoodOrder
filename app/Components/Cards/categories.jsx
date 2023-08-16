@@ -1,5 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text, Pressable, Image } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { Colors } from '../../utils/colors';
+
 
 export default function Categories({ text, url }) {
   return (
@@ -7,7 +10,7 @@ export default function Categories({ text, url }) {
       <View style={styles.container}>
         <View style={styles.row}>
           <View style={styles.rowContainer}>
-            <Text>{text}</Text>
+            <Text style={styles.text} >{text}</Text>
           </View>
           <View style={styles.rowContainer}>
             <Image
@@ -27,13 +30,15 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     justifyContent: 'center',
-    width: 130,
-    height: 70,
-    backgroundColor: '#FBE6E6',
+    width: wp('35%'),
+    height: hp('10%'),
+    backgroundColor:Colors.secondary_color,
     borderRadius: 20,
     marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
+    paddingLeft:10,
+  
   },
 
   row: {
@@ -43,11 +48,14 @@ const styles = StyleSheet.create({
   rowContainer: {
     flex: 1,
   },
+  text:{
+    color:Colors.white,
+  
+  },
   image: {
     borderRadius: 30,
-    width: 50,
-    height: 50,
-    marginLeft: 2,
-    marginRight: 2,
+    width: hp('5%'),
+    height: wp('10%'),
+    paddingLeft:5
   },
 });

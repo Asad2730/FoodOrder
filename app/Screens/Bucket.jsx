@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {StyleSheet, View,Text } from 'react-native';
+import { Colors } from '../utils/colors';
 
 export default function Bucket({navigation}) {
   return (
@@ -13,7 +14,7 @@ export default function Bucket({navigation}) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#000000',
+      backgroundColor: Colors.black,
       alignItems: 'center',
       justifyContent: 'center',
     },

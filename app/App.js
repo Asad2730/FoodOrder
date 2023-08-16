@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import { StyleSheet, View, ScrollView, SafeAreaView,FlatList } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,6 +10,7 @@ import Home from './Screens/Home';
 import Bucket from './Screens/Bucket';
 import Promo from './Screens/Promo';
 import More from './Screens/More';
+import { Colors } from './utils/colors';
 
 
 
@@ -25,7 +26,7 @@ export default function App() {
   };
 
   return (
-  
+  <GestureHandlerRootView style={{ flex: 1 }}>
     <NavigationContainer>
      <Stack.Navigator>
        {!isLoggedIn ? (
@@ -44,19 +45,19 @@ export default function App() {
        )}
      </Stack.Navigator>
    </NavigationContainer>
-  
+   </GestureHandlerRootView>  
   );
 }
 
 const BottomNavigation = () => {
-  return (
-<Tab.Navigator 
+  return (  
+  <Tab.Navigator 
   screenOptions={(color, size ) => ({
      headerShown:false,
     tabBarActiveTintColor: 'red',
     tabBarInactiveTintColor: 'grey',
     tabBarStyle: {
-      backgroundColor: '#FBE6E6',
+      backgroundColor: Colors.secondary_color,
     },
    
   })}
@@ -90,6 +91,8 @@ const BottomNavigation = () => {
       }}
       />
     </Tab.Navigator>
+
+   
   );
 }
 

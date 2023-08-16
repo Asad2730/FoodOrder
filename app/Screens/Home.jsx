@@ -4,6 +4,8 @@ import Categories from '../Components/Cards/categories';
 import CustomText from '../Components/UI/CustomText';
 import TopSelling from '../Components/Cards/TopSelling';
 import HomePageSlider from '../Components/Slider/HomePageSlider';
+import { Colors } from '../utils/colors';
+
 
 const data = [
   { key: '1', text: 'Everyday meal', url: 'https://i.insider.com/51fc266a6bb3f75277000020?width=400&format=jpeg&auto=webp' },
@@ -65,7 +67,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor:Colors.black,
     
   },
   container: {

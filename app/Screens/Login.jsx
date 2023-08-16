@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import {StyleSheet, View } from 'react-native';
 import CustomInput from '../Components/UI/CustomInput';
 import CustomButton from '../Components/UI/CustomButton';
-
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { Colors } from '../utils/colors';
 
 export default function Login({navigation}) {
 
@@ -28,9 +28,11 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: Colors.black,
     alignItems: 'center',
     justifyContent: 'center',
+    height:hp('100%'),
+    width:wp('100%')
   },
 });
 
